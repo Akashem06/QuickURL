@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --primarycolor: rgb(0, 175, 166);
+}
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+}
+.resultContainerQR {
+    height: 100vh;
+    width: 100%;
+    background: var(--primarycolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+}
+#resultContainerShortURL {
+    height: 100vh;
+    width: 100%;
+    background: rgb(121, 66, 111);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+}
+.headerBar {
+    width: 95%;
+    position: absolute;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+}
+.headerLogo {
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--primarycolor)
+}
+.headerButton{
+    padding: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    background: var(--primarycolor);
+    transition: box-shadow ease-out 0.5s;
+}
+.headerButton:hover {
+    box-shadow: 0 0 5px 5px var(--primarycolor);
+}
+.url {
+    width: 900px;
+    padding: 5px 5px 5px 5px;
+    font-size: 25px;
+    background: white;
+    border-radius: 25px;
+    border: 2px solid var(--primarycolor);
+    color: rgb(15, 15, 15);
+    text-align: center;
+}
+.title {
+    text-align: center;
+    position: relative;
+    bottom:15%;
+    user-select: none;
+    font-weight: 700;
+    color: var(--primarycolor);
+    font-size: 75px;
+}
+.titleSpan{
+    color: rgb(15, 15, 15);
+    font-size: 25px;
+}
+.formURL {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 15%;
+}
+.buttons {
+    margin: 75px;
+}
+.createQR {
+    font-weight: 700;
+    font-size: 35px;
+    height: 100px;
+    width: 400px;
+    border-radius: 50px;
+    border: 0;
+    background: white;
+    margin-right: 50px;
+    cursor:pointer;
+    letter-spacing: 8px;
+    box-shadow: inset 0 0 0 0 var(--primarycolor);
+    transition: box-shadow ease-out 0.5s, transform ease-out 0.5s;
+}
+.createQR:hover {
+    transform: scale(1.2);
+    box-shadow: inset -400px 0 0 0 var(--primarycolor);
+}
+.shortenURL {
+    font-weight: 700;
+    font-size: 35px;
+    height: 100px;
+    width: 400px;
+    border-radius: 50px;
+    border: 0;
+    background-color: white;
+    margin-left: 50px;
+    cursor: pointer;
+    letter-spacing: 8px;
+    box-shadow: inset 0 0 0 0 var(--primarycolor);
+    transition: box-shadow ease-out 0.5s, transform ease-out 0.5s;
+}
+.shortenURL:hover{
+    transform: scale(1.2);
+    box-shadow: inset 400px 0 0 0 var(--primarycolor);
+}
+#sourceQR{
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+.boxQR {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    padding: 50px;
+    position: relative;
+    background: white;
+    border-radius: 25px;
+}
+.boxQRText{
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    position: relative;
+    bottom: 5%;
+    max-width: 350px;
+    max-height: 75px;
+    overflow: hidden;
+    word-break: break-all;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.boxQRText:hover{
+    overflow:auto;
+}
+.boxQRText::-webkit-scrollbar {
+    width: 5px;
+}
+.boxQRText::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgb(151, 151, 151);
+}
+.tableBox {
+    max-height: 600px;
+    width: 90%;
+    overflow: auto;
+}
+.tableBox::-webkit-scrollbar {
+    width: 10px;
+}
+.tableBox::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgb(151, 151, 151);
+}
+.table{
+    padding: 25px;
+    height: 600px;
+    background: white;
+    border-radius: 25px;
+    word-break: break-all;
+    width: 100%;
+}
+.table thead tr th {
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+.table thead {
+    box-shadow: inset  0 -2px 0 0 black;
+}
+.table tbody tr td {
+    text-align: center;
+    text-decoration: none;
+}
+.table tbody tr td a {
+    text-decoration: none;
+    color: rgb(0, 30, 201);
+}
+.table tbody tr {
+    box-shadow: inset 0 -2px 0 0 black;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+.backTop {
+    position: fixed;
+    display: none;
+    height: 35px;
+    top: 1%;
+    right: 3%;
+    text-align: center;
+    background-color: black;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 50px;
+    transition: box-shadow ease-out 0.5s, background-color ease-out 0.5s, color ease-out 0.5s;
+}
+.backTop:hover {
+    background-color: rgb(255, 220, 63);
+    box-shadow: 0 0 2px 2px rgb(255, 220, 63);
+    color: black;
+}
+.delete {
+    font-weight: 700;
+    font-size: 25px;
+    cursor: pointer;
+}

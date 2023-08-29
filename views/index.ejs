@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lora:wght@500&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+        <div class="container">
+            <div class="headerBar">
+                <p class="headerLogo">QuickURL</p>
+                <a href="" class="headerButton">About the Creator</a>
+            </div>
+            <p class="title">Transform your URLS with QuickURL<br><span class="titleSpan">A URL shortner/QR generator using node.js</span></p>
+            <form action="/shortURLS" method="POST" class="formURL">
+                <label for="fullURL"></label>
+                <input required type="url" class="url" name="fullURL" id="fullURL" placeholder="Enter your full URL"  autocomplete="off">
+                <div class="buttons">
+                    <button type="button" class="createQR" onclick = generateQR()>QR CODE</button>
+                    <button type="submit" class="shortenURL" onclick = scrollURL()>SHORTEN URL</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="resultContainerQR">
+            <p class="backTop" onclick = topFunction()>Go Back to Top</p>
+            <div class="boxQR">
+                <a class="boxQRText">Source URL: None</a>
+                <img src="" id="sourceQR">
+            </div>
+        </div>
+
+        <div id="resultContainerShortURL">
+            <div class="tableBox">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Full URL</th>
+                            <th>Short URL</th>
+                            <th>Clicks</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% ShortURLS.forEach(URL => { %>
+                            <tr>
+                                <td style="max-width: 300px;"><a href="<%= URL.full %>"><%= URL.full %></a></td>
+                                <td style="max-width: 400px;"><a href="<%= URL.short %>">http://localhost:5000/<%= URL.short %></a></td>
+                                <td><%= URL.clicks %></td>
+                                <td><a class="delete" href="/shortURLS/<%= URL._id %>" style="color: rgb(189, 0, 0);">X</a></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    <script src="/javascript/script.js"></script>
+</body>
+
+</html>
